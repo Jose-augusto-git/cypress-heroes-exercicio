@@ -18,7 +18,7 @@ export class loginPage{
     }
 
     buttonSignIn(){
-        cy.get('button').eq(15).click()
+        cy.get('.w-\\[380px\\] > .flex > .undefined').click()
     }
 
     alertTextLogin(){

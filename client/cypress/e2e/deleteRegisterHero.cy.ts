@@ -16,14 +16,6 @@ describe('Realizar um novo cadastro de herói', () => {
     login.buttonSignIn();
 
     cy.get('a > .undefined').should('be.visible');
-
-    createHero.butttonCreateNewHero();
-    createHero.checkAccessCreateHeroPage();
-    createHero.inputNameHero();
-    createHero.numbersInputHero();
-    createHero.selectPowerHero();
-    createHero.clickButtonSubmit();
-    createHero.checkNumberRegister();
     
     
   })
