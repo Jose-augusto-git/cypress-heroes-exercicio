@@ -1,13 +1,14 @@
 import { accessSitePage } from "../page/accessSite/accessSitePage"
 import { loginPage } from "../page/login/loginPage"
-import { createHeroPage } from "../page/createHero/createHeroPage"
+import { deleteHeroPage } from "../page/createHero/deleteHeroPage"
 
 const accessSite = new accessSitePage
 const login = new loginPage
-const createHero = new createHeroPage
+const deleteHero = new deleteHeroPage
 
-describe('Realizar um novo cadastro de herói', () => {
-  it('CT01 - Ao salvar o cadastro o herói precisa aparecer na tela inicial ', () => {
+
+describe('Deletar heroi que foi criado', () => {
+  it('CT01 - Ao deletar o heroi, ele não pode aparecer no site', () => {
     accessSite.accessSite();
 
     login.buttonLogin();
@@ -16,6 +17,12 @@ describe('Realizar um novo cadastro de herói', () => {
     login.buttonSignIn();
 
     cy.get('a > .undefined').should('be.visible');
+
+    deleteHero.buttonTrash();
+    deleteHero.checkButtonsWinDeleteHero();
+    deleteHero.buttonYesDeleteHero();
+    deleteHero.checkDeleteRegister();
+    
     
     
   })
