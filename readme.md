@@ -1,63 +1,22 @@
-# Cypress Heroes Demo Application
+# 📖 Casos de Teste Automatizados
 
-This is a demo application that shows how to use Cypress to run end-to-end,
-component, and API tests against an application.
+Este projeto contém automações E2E desenvolvidas com Cypress para validar as principais funcionalidades do sistema.
 
-## Getting Started
+---
 
-The app is a mono repo that uses npm workspaces. Once you clone the project,
-install the dependencies at the root folder:
+## 📝 Funcionalidades Testadas
 
-```sh
-npm install
-```
+| Funcionalidade               | Código | Cenário                                                                                         | Resultado Esperado                                                                 |
+|:----------------------------|:--------|:------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------|
+| **Deletar Herói**             | CT01     | Ao deletar um herói, ele deve ser removido da tela inicial.                                      | O card do herói excluído não deve mais aparecer no site.                         |
+| **Editar Cadastro de Herói** | CT01     | Ao editar os dados de um herói e salvar, a alteração deve ser refletida na tela inicial.         | Os dados atualizados devem aparecer imediatamente no card do herói.              |
+| **Contratar Herói**           | CT01     | Ao clicar no ícone de dinheiro de um herói, a quantidade de contratações deve ser incrementada.  | A quantidade de contratações deve aumentar em 1 e atualizar no card.             |
+| **Logout e Restrições**       | CT01     | Ao sair da conta, o botão de deletar herói não deve estar mais disponível na interface.          | O botão de exclusão deve desaparecer e não estar acessível para nenhum herói.    |
 
-After that a few more things need to be set up (databases and such), to do so run:
+---
 
-```sh
-npm run setup
-```
+## 📌 Observações
 
+- Todos os testes são executados diretamente na interface web, simulando ações de usuário real.
+- Os testes foram implementados considerando o comportamento visual e funcional da aplicação.
 
-To launch the app for development, run:
-
-```sh
-npm run dev
-```
-
-This will start both the client and server apps in dev mode. The site will be
-available at http://localhost:3000.
-
-## App Overview
-
-The Cypress Heroes app consists of a frontend client app written in React that
-uses Vite, as well as a backend app that uses NestJS.
-
-### React Client App
-
-The React client app is located in the **client** folder. It is a standard React [Vite](https://vitejs.dev/) app.
-
-Todo: fill out
-
-### NestJS Server App
-
-The server app is in the **server** folder. It is built with the [NestJS](https://nestjs.com/) Node.js framework. It uses [Prisma](https://www.prisma.io/) for the database ORM.
-
-#### Database seeding and resetting
-
-The database is seeded from the **server/prisma/seed.ts** script when you set up the app. If at any time you want to reset the database back to its initial state, run:
-
-```sh
-npm run resetdb
-```
-
-## Environment Variables
-
-The client app uses an environment variable to know what the URL is for the
-backend api named `VITE_API_URL`. It defaults to "http://localhost:3001" for use
-in dev mode, and should be overriden in other environments/modes.
-
--------
-Acesso ao site:
-Email: admin@test.com
-senha: test123
